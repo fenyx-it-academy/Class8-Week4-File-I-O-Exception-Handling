@@ -15,7 +15,7 @@ print("Welcome to LCM calculator: ")
 while True:
     try:
         user_input = []
-        # take 4
+        # take 4 inputs
         for i in range(1, 5):
             a = int(input("Enter input number " + str(i) + " : "))
             user_input.append(a)
