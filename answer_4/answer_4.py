@@ -18,16 +18,15 @@ def input_and_check(prompt, accepted_inputs, error_prompt='Error: Invalid input!
             else:
                 assert input_string in accepted_inputs
                 return input_string
-        except (AssertionError, ValueError):
+        except:
             print(error_prompt)
 
 
 # The main loop
 while True:
     number_1 = input_and_check('Enter first number: ', 'numbers', 'Error: Input must be a float value!')
-    number_2 = input_and_check('Enter second number: ', 'numbers', 'Error: Input must be a float value!')
     operation = input_and_check('Choose an operation: [+, -, *, /]: ', ['+', '-', '*', '/'], 'Error: Invalid operation! Try again.')
-
+    number_2 = input_and_check('Enter second number: ', 'numbers', 'Error: Input must be a float value!')
 
     if operation == '+':
         print(f'{number_1} + {number_2} = {add_function.add(number_1, number_2)}')
@@ -38,6 +37,6 @@ while True:
     elif operation == '/':
         print(f'{number_1} / {number_2} = {divide_function.divide(number_1, number_2)}')
     
-    if input_and_check('Do you want to continue? (Y/N): ', ['Y', 'y', 'N', 'n']).upper() == 'N':
+    if input_and_check('Do you want to continue? (Y/N): ', ['Y', 'y', 'N', 'n']) in ['N', 'n']:
         break
 

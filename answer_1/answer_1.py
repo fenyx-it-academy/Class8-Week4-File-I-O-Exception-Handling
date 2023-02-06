@@ -1,7 +1,7 @@
 import string
 import os
 
-all_letters = string.ascii_lowercase + string.ascii_uppercase
+all_letters = string.ascii_letters
 
 current_path = os.path.dirname(os.path.realpath(__file__))
 file_path = os.path.join(current_path, "letters.txt")       # The path to the result file
@@ -18,8 +18,7 @@ while True:
         print(f"Error: not between 1 and {len(all_letters)}")
 
 # write the letters to the file
-with open(file_path, "w") as f:
-    for index, letter in enumerate(all_letters):
-        f.write(letter)
-        if (index + 1) % num_of_letters_in_line == 0:
-            f.write("\n")
+with open(file_path, "w") as f:    
+    for i in range(0, len(all_letters), num_of_letters_in_line):
+        f.writelines(all_letters[i:i+num_of_letters_in_line] + '\n')
+
