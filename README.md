@@ -3,7 +3,7 @@
 
 ## Letters for each line
 
-                                                                                                                                                aa                                                                                                                                                                              
+Write a Python program to create a file where all letters of English alphabet(uppercase and lowercase both) are listed by specified number of letters on each line.
 
 ## Question 2
 
